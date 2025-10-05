@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple Orbit Animation</title>
+  <style>
+   
+    .container {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      margin: 50px auto;
+      background-color: #000;
+    }
+
+    .center {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background: blue;
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    
+
+
+    .smallball {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: white;
+      border-radius: 50%;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+.orbit-path {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  animation-name: rev;
+  animation-duration: 2s;
+
+  animation-iteration-count: infinite;
+}
+
+@keyframes rev {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="center"></div>
+    <div class="orbit-path">
+      <div class="smallball"></div>
+    </div>
+  </div>
+</body>
+</html>
